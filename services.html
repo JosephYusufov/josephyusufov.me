@@ -24,8 +24,7 @@
           color: rgb(38, 193, 185);
       }
       #headshot {
-          width: 45%;
-          height
+          width: 30%;
           object-fit: cover;
           border-radius:50%;
       }
@@ -73,19 +72,56 @@
                    src="https://www.facebook.com/tr?id=179120636321227&ev=PageView&noscript=1"
                    /></noscript>
     <!-- End Facebook Pixel Code -->
+
+    <!-- EmailJS Code -->
+    <script type="text/javascript">
+      (function(){
+          emailjs.init('user_Wd49y4HRPRQOz5iQI6I8F');
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function() {
+          document.getElementById('contact-form').addEventListener('submit', function(event) {
+              event.preventDefault();
+              // generate the contact number value
+              this.contact_number.value = Math.random() * 100000 | 0;
+              emailjs.sendForm('gmail', 'web_services', this);
+          });
+      }
+    </script>
+    <!-- End EmailJS Code -->
   </head>
   <body>
     <div class="container">
-      <h1 class="display-3 text-center">Web Services</h1>
-      <h1 class="text-center"><a href="./index.html"><u>&laquo; Back</u></a></h1>
-      <center> <img id="headshot" alt="" src="static/headshot.png"/> </center> <br/>      
-      <div class="text-center button-container">
-        <a href="mailto:jyusufov00@stuy.edu" display="block" class="btn btn-success text-center">
-          <h1 class="display-4 text-center">Email Me: Lets Talk!</h1>
-          <h3 class="text-center"><u>jyusufov00@stuy.edu</u></h3>
-        </a>
-      </div>
+      <h1 class="display-4 text-center">Contact Me</h1>
+      <p class="text-center">I'll be sure to respond within the day!</p>
+      <center width="20vw"> <img id="headshot" alt="" src="static/headshot.png"/> </center> <br/>      
+      <form id="contact-form" class="text-center">
+        <input type="hidden" name="contact_number">
+        <h3>Name</h3>
+        <input type="text" name="user_name"> <br/> 
+        <h3>Email</h3>       
+        <input type="email" name="user_email"> <br/>
+        <h3>Message</h3>       
+        <textarea name="message" cols="50"></textarea> <br/> <br/>
+        <input type="submit" class="btn btn-light" value="Send">
+      </form>
+      <!-- <div class="text-center button-container"> -->
+        <!-- <a href="mailto:jyusufov00@stuy.edu" display="block"> -->
+          <!--   <button id="contactButton" class="btn btn-success text-center"> -->
+            <!--     <h1 class="display-4 text-center">Email Me: Lets Talk!</h1> -->
+            <!--     <h3 class="text-center"><u>jyusufov00@stuy.edu</u></h3> -->
+            <!--   </button> -->
+          <!-- </a> -->
+        <!-- </div> -->
+      
+      <script type="text/javascript">
+        document.getElementById('contactButton').addEventListener('click', function() {
+            fbq('track', 'Contact');
+        }, false);
+      </script>
       <hr/>
+      <h1 class="display-4 text-center">Web Services</h1> 
       <h3>Website Development and Maintenance    <img height="35px" alt="Bootstrap Logo" src="./static/icons/bootstrap.png"></h3>
       <p>Using Bootstrap, a front-end design framework, I will create a responsive, attractive, and sleek website to broadcast you and your message to those that you want to reach.</p>
       <ul>
@@ -109,12 +145,6 @@
     <br/>
     <center><p>&copy;2020 Joseph Yusufov. All Rights Reserved.</p></center>
 
-    
-    <script type="text/javascript">
-      document.getElementById('contactButton').addEventListener('click', function() {    
-          fbq('track', 'Contact');
-      }, false);
-    </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
